@@ -1,65 +1,81 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+
+const names = [
+  "Lias",
+  "Nolan",
+  "Nando",
+  "Otis",
+  "Laurits",
+  "Thor",
+  "Oliver",
+  "Ezequiel",
+  "Felix",
+  "Magnus",
+  "Måns",
+  "Tobias",
+  "Mika",
+  "Egon",
+  "Marvin",
+];
+
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+  lineHeight: "70px",
+  width: "200px",
+  fontSize: "30px",
+  margin: "20px",
+}));
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="100vh"
+      padding="50px"
+      flexDirection="column"
+    >
+      <Box
+        display="flex"
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        maxWidth="800px"
+        flexWrap="wrap"
+      >
+        {names.sort().map(function (name, index) {
+          return <Item>{name}</Item>;
+        })}
+      </Box>
+      <Button
+        style={{
+          width: "300px",
+          padding: "5px",
+          margin: "15px",
+          fontSize: "20px",
+        }}
+        variant="contained"
+      >
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="https://forms.gle/27Q6ApYtkZ2yVfDX6"
+          style={{
+            color: "inherit",
+            textDecoration: "none",
+          }}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          Stem en win 🥳
         </a>
-      </footer>
-    </div>
-  )
+      </Button>
+    </Box>
+  );
 }
