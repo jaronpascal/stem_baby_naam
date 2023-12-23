@@ -7,21 +7,26 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 
 const names = [
-  "Lias",
-  "Nolan",
-  "Nando",
-  "Otis",
-  "Laurits",
-  "Thor",
-  "Oliver",
-  "Ezequiel",
-  "Felix",
-  "Magnus",
-  "Måns",
-  "Tobias",
-  "Mika",
-  "Egon",
-  "Marvin",
+  "Luna",
+  "Nina",
+  "Zelda",
+  "Freja",
+  "Nova",
+  "Daphne",
+  "Lucie",
+  "Tess",
+  "Nora",
+  "Juno",
+  "Alejandra",
+  "Nika",
+  "Amelia",
+  "Esmé",
+  "Aurora",
+  "Adeline",
+  "Magna",
+  "Mara",
+  "Lena",
+  "Livia"
 ];
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -50,11 +55,11 @@ export default function Home() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        maxWidth="800px"
+        maxWidth="1000px"
         flexWrap="wrap"
       >
         {names.sort().map(function (name, index) {
-          return <Item>{name}</Item>;
+          return <Item key="{name}">{name}</Item>;
         })}
       </Box>
       <Button
@@ -67,7 +72,7 @@ export default function Home() {
         variant="contained"
       >
         <a
-          href="https://forms.gle/27Q6ApYtkZ2yVfDX6"
+          href="https://forms.gle/RwUciAUrL7Qzk2gg7"
           style={{
             color: "inherit",
             textDecoration: "none",
@@ -76,6 +81,10 @@ export default function Home() {
           Stem en win 🥳
         </a>
       </Button>
+      <div className="wave"></div>
+      <div className="wave"></div>
+      <div className="wave"></div>
     </Box>
+          
   );
 }
